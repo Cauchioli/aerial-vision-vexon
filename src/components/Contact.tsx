@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 
 const areas = ["Itapetininga", "Tatuí", "Cesário Lange", "Boituva", "Sorocaba", "Região"];
-const servicesList = ["Captação 4K", "Captação + Edição", "Pacote Primeiro Voo"];
 
 const Contact = () => {
   return (
-    <section id="contato" className="relative py-24 px-4" style={{ background: "hsl(220 40% 5%)" }}>
+    <section id="contato" className="relative py-24 px-4 bg-card">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,10 +16,10 @@ const Contact = () => {
             // CONTATO
           </span>
           <h2 className="font-display font-bold text-foreground text-2xl sm:text-3xl mb-3">
-            Vamos decolar juntos
+            Vamos decolar juntos?
           </h2>
           <p className="font-body text-muted mb-12" style={{ fontSize: "0.95rem" }}>
-            Agende seu voo agora. Respondemos pelo WhatsApp.
+            Escolha o pacote ideal e fale direto comigo no WhatsApp. Resposta em minutos.
           </p>
         </motion.div>
 
@@ -32,16 +31,13 @@ const Contact = () => {
             </h3>
 
             <div className="space-y-4 mb-8">
-              <div
-                className="border rounded-sm p-5 flex items-center gap-4"
-                style={{ background: "hsl(220 33% 11%)", borderColor: "rgba(0,255,213,0.15)" }}
-              >
+              <div className="border border-border rounded-sm p-5 flex items-center gap-4 bg-secondary">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-primary flex-shrink-0">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                 </svg>
                 <div>
                   <span className="font-body text-foreground text-sm block">(15) 99691-8236</span>
-                  <span className="font-body text-muted text-xs">WhatsApp disponível</span>
+                  <span className="font-body text-muted text-xs">WhatsApp · resposta em minutos</span>
                 </div>
               </div>
 
@@ -49,15 +45,14 @@ const Contact = () => {
                 href="https://instagram.com/vexon.itape"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border rounded-sm p-5 flex items-center gap-4 hover:border-primary/30 transition-colors"
-                style={{ background: "hsl(220 33% 11%)", borderColor: "rgba(0,255,213,0.15)" }}
+                className="border border-border rounded-sm p-5 flex items-center gap-4 hover:border-primary/30 transition-colors bg-secondary"
               >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-primary flex-shrink-0">
                   <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
                 </svg>
                 <div>
                   <span className="font-body text-foreground text-sm block">@vexon.itape</span>
-                  <span className="font-body text-muted text-xs">Instagram</span>
+                  <span className="font-body text-muted text-xs">Veja nossos trabalhos</span>
                 </div>
               </a>
             </div>
@@ -77,10 +72,7 @@ const Contact = () => {
 
           {/* Right */}
           <div className="space-y-6">
-            <div
-              className="border rounded-sm p-6"
-              style={{ background: "hsl(220 33% 11%)", borderColor: "rgba(0,255,213,0.15)" }}
-            >
+            <div className="border border-border rounded-sm p-6 bg-secondary">
               <h4 className="font-display text-primary font-bold mb-4" style={{ fontSize: "0.78rem", letterSpacing: "0.1em" }}>
                 ÁREAS DE ATENDIMENTO
               </h4>
@@ -96,20 +88,22 @@ const Contact = () => {
               </div>
             </div>
 
-            <div
-              className="border rounded-sm p-6"
-              style={{ background: "hsl(220 33% 11%)", borderColor: "rgba(0,255,213,0.15)" }}
-            >
+            <div className="border border-border rounded-sm p-6 bg-secondary">
               <h4 className="font-display text-primary font-bold mb-4" style={{ fontSize: "0.78rem", letterSpacing: "0.1em" }}>
-                NOSSOS SERVIÇOS
+                COMO FUNCIONA
               </h4>
-              <ul className="divide-y" style={{ borderColor: "rgba(0,255,213,0.1)" }}>
-                {servicesList.map((s) => (
-                  <li key={s} className="font-body text-foreground text-sm py-3 first:pt-0 last:pb-0" style={{ borderColor: "rgba(0,255,213,0.1)" }}>
-                    {s}
-                  </li>
+              <div className="space-y-4">
+                {[
+                  { step: "01", text: "Fale comigo pelo WhatsApp e me conte sobre seu projeto" },
+                  { step: "02", text: "Escolhemos juntos o pacote ideal para sua necessidade" },
+                  { step: "03", text: "Agendamos o voo e você recebe o material editado" },
+                ].map((s) => (
+                  <div key={s.step} className="flex items-start gap-3">
+                    <span className="font-display text-primary text-xs font-bold mt-0.5">{s.step}</span>
+                    <p className="font-body text-muted text-sm">{s.text}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
